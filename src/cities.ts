@@ -53,7 +53,7 @@ const cities: City[] = [
 function getCityPopulation(city: City): number {
   // write your code here...
 
-  return -1; // replace -1 with what you see is fit
+  return city.population; // replace -1 with what you see is fit
 }
 
 /**
@@ -67,6 +67,7 @@ function getCityPopulation(city: City): number {
  */
 function isPopulationAboveThreshold(city: City, threshold: number): boolean {
   // write your code here...
+  if (city.population >= threshold) return true;
 
   return false; // replace false with what you see is fit
 }
@@ -97,8 +98,10 @@ function addCity(
   country: string
 ): City[] {
   // write your code here...
+  const newCity = { id, name, population, country };
+  cities.push(newCity);
 
-  return []; // replace empty array with what you see is fit
+  return cities; // replace empty array with what you see is fit
 }
 
 /**
@@ -112,8 +115,9 @@ function addCity(
  */
 function countCitiesInCountry(cities: City[], country: string): number {
   // write your code here...
+  const c = cities.filter((city) => city.country === country);
 
-  return -1; // replace -1 with what you see is fit
+  return c.length; // replace -1 with what you see is fit
 }
 
 export {
